@@ -8,7 +8,7 @@ public class PatientMapper {
     public static PatientResponseDTO toDTO(Patient patient){
         PatientResponseDTO patientResponseDTO = new PatientResponseDTO(
                 patient.getId().toString(),
-                patient.getFirstname(),
+                patient.getName(),
                 patient.getEmail(),
                 patient.getAddress(),
                 patient.getDateOfBirth().toString()

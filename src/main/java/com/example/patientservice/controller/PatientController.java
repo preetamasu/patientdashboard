@@ -20,7 +20,7 @@ public class PatientController {
         this.patientService = patientService;
     }
 
-    @GetMapping("/all")
+    @GetMapping()
     public ResponseEntity<List<PatientResponseDTO>> getAllPatients(){
         return new ResponseEntity<>(patientService.getAllPatients(), HttpStatus.OK);
     }
