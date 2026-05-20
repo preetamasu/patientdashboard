@@ -29,5 +29,4 @@ public class PatientController {
     public ResponseEntity<PatientResponseDTO> savePatient(@Valid @RequestBody PatientRequestDTO patientRequestDTO){
         return new ResponseEntity<>(patientService.createPatient(patientRequestDTO),HttpStatus.CREATED);
     }
-
 }

@@ -1,7 +1,9 @@
 package com.example.patientservice.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 public record PatientRequestDTO(
@@ -12,23 +14,14 @@ public record PatientRequestDTO(
         )
         String name,
         @NotBlank
-        @Email(
-                message="Email should be valid"
-        )
+        @Email(message="Email should be valid")
         String email,
-        @NotBlank
-                (
-                        message = "Address is required"
-                )
+        @JsonProperty("address")
+        @NotBlank(message = "Address is required")
         String address,
-        @NotBlank
-                (
-                        message = "DOB is required"
-                )
+        @NotBlank (message = "DOB is required")
         String dateOfBirth,
-        @NotBlank(
-                message = "registeredDate cannot be left blank"
-        )
+        @NotNull(message = "registeredDate cannot be left blank")
         String registeredDate
 ) {
 }
